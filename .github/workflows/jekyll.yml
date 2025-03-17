@@ -16,7 +16,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'  # 选择合适的 Ruby 版本
+          ruby-version: '3.4.2' 
           bundler-cache: true
 
       - name: Install dependencies
