@@ -93,7 +93,7 @@ GEM
     tzinfo (1.2.11)
       thread_safe (~> 0.1)
     unicode-display_width (2.6.0)
-    webrick (1.9.1)
+
     zeitwerk (2.7.2)
 
 PLATFORMS
@@ -104,7 +104,7 @@ DEPENDENCIES
   jekyll-feed
   jekyll-readme-index
   jemoji
-  webrick
+
 
 BUNDLED WITH
    2.6.5
