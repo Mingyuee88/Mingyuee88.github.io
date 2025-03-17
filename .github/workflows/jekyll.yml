@@ -26,13 +26,13 @@ jobs:
         run: |
           gem install bundler -v 2.6.5  # 安装特定版本的 Bundler
           echo "Bundler installed successfully."
-          bundle clean --force
-          bundle install --force  # 强制重新安装依赖
+          bundle install 
           echo "Dependencies installed successfully."
 
       - name: Build the site
         run: |
-          bundle exec jekyll build || { echo 'Build failed'; exit 1; }  # 构建 Jekyll 网站
+          set -o pipefail  # 捕获管道中的错误
+          bundle exec jekyll build 2>&1 | tee build.log || { echo 'Build failed'; exit 1; }
           echo "Site built successfully."
 
       - name: Deploy
