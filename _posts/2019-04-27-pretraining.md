@@ -1,5 +1,5 @@
 ---
-title: Pre-training
+title: Pre-Training
 category: Jekyll
 layout: post
 ---
