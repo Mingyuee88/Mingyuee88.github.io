@@ -95,7 +95,6 @@ GEM
     unicode-display_width (2.6.0)
     webrick (1.9.1)
     zeitwerk (2.7.2)
-gem "github-pages", group: :jekyll_plugins
 
 PLATFORMS
   x64-mingw-ucrt
