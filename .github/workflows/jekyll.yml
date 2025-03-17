@@ -26,7 +26,8 @@ jobs:
         run: |
           gem install bundler -v 2.6.5  # 安装特定版本的 Bundler
           echo "Bundler installed successfully."
-          bundle install  # 安装 Gemfile 中的依赖
+          bundle clean --force
+          bundle install --force  # 强制重新安装依赖
           echo "Dependencies installed successfully."
 
       - name: Build the site
@@ -37,3 +38,5 @@ jobs:
       - name: Deploy
         run: |
           echo "Deploying the site..."  # 在此处添加实际的部署步骤
+          - name: Install dependencies
+
