@@ -35,8 +35,8 @@ jobs:
           bundle exec jekyll build 2>&1 | tee build.log || { echo 'Build failed'; exit 1; }
           echo "Site built successfully."
 
+    
       - name: Deploy
         run: |
-          echo "Deploying the site..."  # 在此处添加实际的部署步骤
-          - name: Install dependencies
+          echo "Deploying the site..."  # 确保这是唯一的命令，没有其他字符
 
