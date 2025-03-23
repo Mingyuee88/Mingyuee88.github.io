@@ -80,3 +80,4 @@ In today’s digital world, our personal information proliferates online. There 
 ### Why is PII Removal important?
 With PII readily available through a Google search or visible to threat actors on a data broker site, organizations are at increased risk of phishing, social engineering attacks, doxxing, swatting, and impersonation risks. Phishing alone accounts for almost one-third of all data breaches. Removing this PII hardens your organization’s attack surfaces, reduces your breach risks, and protects your executives and employees.
 
+---
