@@ -26,6 +26,8 @@ These dialogues help the model learn how to understand questions and provide rea
 
 ### Conversation Protocol / Format
 In supervised finetuning, the text needs to be converted into a format that the model can understand. The key tool here is the **tokenizer** which splits text into units (tokens) that the model can process, such as words or subwords. It ensures the model can accurately read the input text, laying the groundwork for subsequent learning and generation.
+![image](https://github.com/user-attachments/assets/acbf3379-7fee-4bf9-9440-f3d4fea5f77b)
+
 
 
 
