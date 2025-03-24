@@ -26,6 +26,8 @@ These dialogues help the model learn how to understand questions and provide rea
 
 ### Conversation Protocol / Format
 In supervised finetuning, the text needs to be converted into a format that the model can understand. The key tool here is the **tokenizer** which splits text into units (tokens) that the model can process, such as words or subwords. It ensures the model can accurately read the input text, laying the groundwork for subsequent learning and generation.
+[Click here to see how tokenizer works !](https://tiktokenizer.vercel.app/)
+
 ![image](https://github.com/user-attachments/assets/acbf3379-7fee-4bf9-9440-f3d4fea5f77b)
 
 
@@ -33,9 +35,22 @@ In supervised finetuning, the text needs to be converted into a format that the 
 
 ### Dialogue Datasets
 
+#### Labeling instructions development
+
 Dialogue datasets are central to supervised fine-tuning. Initially, in 2022, InstructGPT relied on manually annotated instructional data. Nowadays, most data is generated with the help of large language models (LLMs), which includes both manually edited data that simulates real-world scenarios and completely synthetic data.
 
-However, these data sources have limitations. The model's memory recall is restricted, encompassing knowledge within its parameters—similar to vague memory (e.g., information read a month ago)—and knowledge in the current context window, which resembles working memory. Additionally, the model lacks self-awareness and may mistakenly believe it is ChatGPT without proper guidance.
+#### Dealing with instructions
+
+Users may provide either explicit instructions or indirectly specified tasks.
+
+1. Explicit Instructions:
+For example: "Write a story about a clever frog."
+
+2. Indirect Tasks:
+- Use examples to infer, such as predicting the sentiment of a new movie review based on existing reviews and their sentiments.
+- Provide a prompt to guide the output, for example: "Once there was a clever frog named Julius."
+
+You will receive multiple text outputs to help users complete their tasks, evaluated based on criteria such as **usefulness**(whether the output effectively assists the user),**truthfulness**(if the content is based on facts) and **harmlessness**(ensuring that the output contains no harmful or misleading information). In most tasks, **truthfulness and harmlessness** are generally more important than usefulness.
 
 
 
@@ -44,29 +59,16 @@ However, these data sources have limitations. The model's memory recall is restr
 ## Limitations
 Current large language models face several issues. For example:
 - **Vague Knowledge Recall**: Models may struggle with clarity on certain knowledge.
-- **Counting and Spelling Issues**: They may perform poorly on tasks requiring precise calculations or accurate spelling.
-- **Text Block Processing**: Models handle text blocks (token chunks) instead of individual characters, leading to potential issues.
+- **Models are not good with spelling**: They see tokens(text chunks), not individual letters!
+- **Bunch of other small random stuff**: Interestingly, the model may perform better on more difficult questions compared to super simple ones.
+  
+  For example, Chat-GPT may make mistakes in answering the question “What is bigger 9.11 or 9.9?”
+  
 - **Hallucinations**: The generation of content that does not align with factual reality.
 
   ......
-
-## Coping Strategies
-  **1. Procedural Questioning**:
   
- Extract knowledge from the model through prompting.
-  
-**Example:** If the model doesn't know the answer, guide it to respond:
-  `“I'm sorry, I don't believe I know.”`
-  
-**2. Guiding Model Search**:
-
-Add special markers (like `<SEARCH_START>` and `<SEARCH_END>`) in questions to enable the model to fetch answers.
-
-**Example:** `“Who is Orson Kovacs? <SEARCH_START>Orson Kovacs<SEARCH_END>”`
-  
-## Hallucination Issues and Their Remedies
-
-### Introduction to Hallucinations
+## Hallucinations
 Hallucinations refer to instances where the model produces content that is factually incorrect or entirely fictional. For example:
 - User asks: “Who invented the time machine?”
 - Model responds: “The time machine was invented by John Smith in 2025, for which he received a Nobel Prize.”
@@ -80,15 +82,29 @@ This phenomenon usually occurs because the model lacks direct perception of the 
 - **Lack of Fact-Checking**: The model cannot verify the authenticity of information in real time.
 
 ### How to Mitigate Hallucinations
-**1. Introduce Fact-Checking Mechanisms**:
+    
+**1. Procedural Questioning**:
+  
+ Extract knowledge from the model through prompting.
+  
+**Example:** If the model doesn't know the answer, guide it to respond:
+  `“I'm sorry, I don't believe I know.”`
+  
+**2. Guiding Model Search**:
+
+Add special markers (like `<SEARCH_START>` and `<SEARCH_END>`) in questions to enable the model to fetch answers.
+
+**Example:** `“Who is Orson Kovacs? <SEARCH_START>Orson Kovacs<SEARCH_END>”`
+
+**3. Introduce Fact-Checking Mechanisms**:
   - After the model generates responses, verify the authenticity through external knowledge bases (e.g., Wikipedia) or search engines.
   - For example, add: “According to Wikipedia, this information has not been confirmed.”
   
-**2. Limit Response Scope**:
+**4. Limit Response Scope**:
   - Use prompt engineering to encourage the model to generate more conservative answers.
   - Example prompt: “If youare unsure about the answer, please respond with ‘I don't know.’”
   
-**3. Enhance Training Data**:
+**5. Enhance Training Data**:
   - Incorporate more accurate and real information into the training dataset, marking fictional content to help the model distinguish between facts and fiction.
 
   - Improved Example:
@@ -98,6 +114,9 @@ This phenomenon usually occurs because the model lacks direct perception of the 
 Through these methods, the model can better avoid hallucinations and provide more reliable answers.
 
 ## Analogy: The Swiss Cheese Model of Capability
+
+![image](https://github.com/user-attachments/assets/bf725a95-f6ec-4944-a657-1b55704fc46c)
+
 
 The capabilities of large language models can be compared to a "Swiss cheese model." This analogy highlights that the distribution of abilities is uneven; while the model may excel in certain areas, it can exhibit random deficiencies in others, much like the holes in Swiss cheese. To address these gaps, supervised fine-tuning can be employed to enhance the model's overall capabilities by filling in these "holes."
 
