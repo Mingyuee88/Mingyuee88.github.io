@@ -46,7 +46,7 @@ Current large language models face several issues. For example:
 - **Text Block Processing**: Models handle text blocks (token chunks) instead of individual characters, leading to potential issues.
 - **Hallucinations**: The generation of content that does not align with factual reality.
 
-  ...
+  ......
 
 ## Coping Strategies
   **1. Procedural Questioning**:
