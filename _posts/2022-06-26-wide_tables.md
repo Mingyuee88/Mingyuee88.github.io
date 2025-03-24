@@ -45,16 +45,21 @@ Current large language models face several issues. For example:
 - **Counting and Spelling Issues**: They may perform poorly on tasks requiring precise calculations or accurate spelling.
 - **Text Block Processing**: Models handle text blocks (token chunks) instead of individual characters, leading to potential issues.
 - **Hallucinations**: The generation of content that does not align with factual reality.
-- ...
+
+  ...
 
 ## Coping Strategies
   **1. Procedural Questioning**:
-  Extract knowledge from the model through prompting.
+  
+ Extract knowledge from the model through prompting.
+  
 **Example:** If the model doesn't know the answer, guide it to respond:
   `“I'm sorry, I don't believe I know.”`
   
 **2. Guiding Model Search**:
+
 Add special markers (like `<SEARCH_START>` and `<SEARCH_END>`) in questions to enable the model to fetch answers.
+
 **Example:** `“Who is Orson Kovacs? <SEARCH_START>Orson Kovacs<SEARCH_END>”`
   
 ## Hallucination Issues and Their Remedies
