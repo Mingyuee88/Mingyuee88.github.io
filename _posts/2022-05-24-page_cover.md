@@ -22,3 +22,5 @@ In this stage, we fine-tune the Base Model using supervised learning with labele
 In this stage, we optimize the Supervised Fine-Tuning Model using reinforcement learning methods. This process adjusts the model's responses based on feedback signals, making them more aligned with user expectations and goals.
 
 By following these two training stages, we can significantly improve the practical application of the model to meet more complex demands.
+
+---
