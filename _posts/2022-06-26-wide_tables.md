@@ -89,7 +89,7 @@ This phenomenon usually occurs because the model lacks direct perception of the 
 **3. Enhance Training Data**:
   - Incorporate more accurate and real information into the training dataset, marking fictional content to help the model distinguish between facts and fiction.
 
-Improved Example:
+  Improved Example:
 - User asks: “Who invented the time machine?”
 - Model responds: “Currently, there has been no invention of a time machine; it is a concept from science fiction.”
 
