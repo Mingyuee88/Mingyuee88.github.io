@@ -41,19 +41,23 @@ Dialogue datasets are central to supervised fine-tuning. Initially, in 2022, Ins
 
 Users may provide either explicit instructions or indirectly specified tasks.
 
-1. Explicit Instructions:
+**1. Explicit Instructions:**
 For example: "Write a story about a clever frog."
 
-2. Indirect Tasks:
-- Use examples to infer, such as predicting the sentiment of a new movie review based on existing reviews and their sentiments.
-- Provide a prompt to guide the output, for example: "Once there was a clever frog named Julius."
+**2. Indirect Tasks:**
+  - Use examples to infer, such as predicting the sentiment of a new movie review based on existing reviews and their sentiments.
+  - Provide a prompt to guide the output, for example: "Once there was a clever frog named Julius."
 
 You will receive multiple text outputs to help users complete their tasks, evaluated based on criteria such as **usefulness**(whether the output effectively assists the user),**truthfulness**(if the content is based on facts) and **harmlessness**(ensuring that the output contains no harmful or misleading information). In most tasks, **truthfulness and harmlessness** are generally more important than usefulness.
 
 ### "Vague recollection" vs. "Working memory"
-- **Vague recollection == Knowledge in the parameters**: Similar to remembering something you read a month ago. It's a broader, more generalized knowledge stored within the model's parameters.
+**1. Vague recollection == Knowledge in the parameters**:
 
-- **Working memory == Knowledge in the tokens of the context window**: The model utilizes the immediate context of the conversation or input to generate relevant responses. It allows the model to keep track of the ongoing dialogue and respond appropriately based on recent information.
+Similar to remembering something you read a month ago. It's a broader, more generalized knowledge stored within the model's parameters.
+
+**2. Working memory == Knowledge in the tokens of the context window**: 
+
+The model utilizes the immediate context of the conversation or input to generate relevant responses. It allows the model to keep track of the ongoing dialogue and respond appropriately based on recent information.
 
 ### Models need tokens to think
 The model processes input tokens sequentially, using the information from each token to inform its understanding and generate appropriate responses. The arrangement of these tokens is crucial for the model's inference capabilities, allowing it to construct coherent and contextually relevant replies.
@@ -64,6 +68,8 @@ Recall the neural network training we learned before, we predict the possibility
 
 **Example:**
 ![image](https://github.com/user-attachments/assets/2d9a3cd7-f51c-4719-9bda-1ffacd5aa150)
+
+**Reason:**
 
 Left assistant does not process tokens in the sequence they were entered. So the response is wrong (although the result is the same as the right one).
 
