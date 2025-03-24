@@ -69,7 +69,7 @@ Recall the neural network training we learned before, we predict the possibility
 **Example:**
 ![image](https://github.com/user-attachments/assets/2d9a3cd7-f51c-4719-9bda-1ffacd5aa150)
 
-**Reason:**
+Reason:
 
 Left assistant does not process tokens in the sequence they were entered. So the response is wrong (although the result is the same as the right one).
 
