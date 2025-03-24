@@ -87,9 +87,9 @@ Current large language models face several issues. For example:
   - Example: When you ask DeepSeek what model it is, the model might respond by saying it is ChatGPT, highlighting that it is a language model developed by OpenAI.
   - However, there are two primary methods to imbue the model with a "sense of self":
 
-  1. Hardcoded Conversations: This involves embedding specific dialogues or discussions about the model's identity directly into its training data, so that when it encounters these topics, it can respond with an understanding of its role and purpose.
+    1. Hardcoded Conversations: This involves embedding specific dialogues or discussions about the model's identity directly into its training data, so that when it encounters these topics, it can respond with an understanding of its role and purpose.
 
-  2. System Message: This method employs a "system message" at the start of each conversation, providing the model with a reminder of its identity. This message sets the context for the interaction, ensuring that the model is aware of its identity and functions throughout the conversation.
+    2. System Message: This method employs a "system message" at the start of each conversation, providing the model with a reminder of its identity. This message sets the context for the interaction, ensuring that the model is aware of its identity and functions throughout the conversation.
   
 - **Hallucinations**: The generation of content that does not align with factual reality.
 
