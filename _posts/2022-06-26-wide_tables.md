@@ -89,7 +89,7 @@ This phenomenon usually occurs because the model lacks direct perception of the 
 **3. Enhance Training Data**:
   - Incorporate more accurate and real information into the training dataset, marking fictional content to help the model distinguish between facts and fiction.
 
-**Improved Example**:
+Improved Example:
 - User asks: “Who invented the time machine?”
 - Model responds: “Currently, there has been no invention of a time machine; it is a concept from science fiction.”
 
@@ -105,4 +105,4 @@ The capabilities of large language models can be compared to a "Swiss cheese mod
 Models trained through supervised fine-tuning are better equipped to understand human intentions and provide more accurate and reasonable answers in various conversational scenarios. Key advantages include higher accuracy due to training on annotated data, which enables the model to respond to questions more precisely. Additionally, these models enhance usability by adapting to a broader range of real-world situations, ultimately improving the user experience.
 
 
-**For Self learning**: If you wish to delve deeper into supervised finetuning, consider using open-source tools (such as Hugging Face) to load a pretrained model and finetune it with your own dataset!
+**For self learning**: If you wish to delve deeper into supervised finetuning, consider using open-source tools (such as Hugging Face) to load a pretrained model and finetune it with your own dataset!
