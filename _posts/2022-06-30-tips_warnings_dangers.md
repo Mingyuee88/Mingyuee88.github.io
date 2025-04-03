@@ -4,6 +4,7 @@ author: Tao He
 date: 2022-06-30
 category: Jekyll
 layout: post
+mermaid: true
 ---
 
 # Reinforcement Learning (RL)
@@ -16,7 +17,14 @@ While pre-training and supervised fine-tuning teach basic patterns, true reasoni
 
 ## The Three Stages of Learning
 
-![image](https://github.com/user-attachments/assets/719d43bd-d7a8-42d9-9928-c2dcf3066771)
+
+```mermaid
+graph TD
+A[Human Feedback] --> B(Reward Model Training)
+B --> C{RL Optimization}
+C --> D[Policy Update]
+D --> C
+```
 
 
 1. **Exposition (Pre-training)**  
