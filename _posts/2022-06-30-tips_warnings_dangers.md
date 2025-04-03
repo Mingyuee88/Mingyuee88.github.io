@@ -87,14 +87,14 @@ $$
 3y - (3+y) = y^2 \implies y^2 - 2y + 3 = 0 \quad \text{(No real solutions ❌)}
 $$
 
-3. Feedback analysis:  
+2. Feedback analysis:  
    Discovers domain restriction 
 
 $$
 y ≠ 0
 $$
 
-4. "Aha" moment:  
+3. "Aha" moment:  
 Factorizes correctly 
 
 $$
