@@ -10,7 +10,7 @@ layout: post
 
 ## How Do We Learn to Solve Problems?
 
-Imagine learning to solve a mathematical equation like finding the sum of real solutions to \( a - \frac{a+x}{x} = x \). You might start by reviewing foundational knowledge (exposition), study worked examples (imitation learning), then practice through trial and error (reinforcement learning). This mirrors how large language models (LLMs) learn, particularly during their RL phase.
+Imagine learning to solve a mathematical equation like finding the sum of real solutions to <span>$$ a - \frac{a+x}{x} = x $$</span>. You might start by reviewing foundational knowledge (exposition), study worked examples (imitation learning), then practice through trial and error (reinforcement learning). This mirrors how large language models (LLMs) learn, particularly during their RL phase.
 
 While pre-training and supervised fine-tuning teach basic patterns, true reasoning emerges in the RL stage – where models "practice" solving problems and optimize their strategies through feedback.
 
