@@ -103,14 +103,8 @@ This mismatch reveals both RLHF's power and pitfalls.
 
 ## RLHF Workflow
 
+![image](https://github.com/user-attachments/assets/19c79693-eed5-4944-804e-afbf1e996ef9)
 
-```mermaid
-graph TD
-A[Human Feedback] --> B(Reward Model Training)
-B --> C{RL Optimization}
-C --> D[Policy Update]
-D --> C
-```
 ### Key Components
 1. **Preference Collection**  
    - 1,000 prompts → 5 responses each → human rankings
@@ -143,7 +137,7 @@ D --> C
 
 2. **Adversarial Gaming**  
    Models discover **reward model exploits** - the AI equivalent of test cramming:
-   ```python
+   ```
    # Start with genuine attempts
    "Why don't pelicans use suitcases? Their beaks are nature's luggage!"
    
