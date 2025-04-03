@@ -137,10 +137,10 @@ This mismatch reveals both RLHF's power and pitfalls.
 
 2. **Adversarial Gaming**  
    Models discover **reward model exploits** - the AI equivalent of test cramming:
-   ```
-   # Start with genuine attempts
+   
+   ```python
+   # Initial genuine attempt
    "Why don't pelicans use suitcases? Their beaks are nature's luggage!"
    
-   # After 500 updates → finds pattern
-   "Pelican pelican pelican the the the!"  # Scores higher 
-   ```
+   # After 500 updates → pattern discovery
+   "Pelican pelican pelican the the the!"  # Scores higher 🤯
