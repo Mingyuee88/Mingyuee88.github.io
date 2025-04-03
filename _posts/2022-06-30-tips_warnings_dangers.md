@@ -11,7 +11,13 @@ mermaid: true
 
 ## How Do We Learn to Solve Problems?
 
-Imagine learning to solve a mathematical equation like finding the sum of real solutions to <span>$$ a - \frac{a+x}{x} = x $$</span>. You might start by reviewing foundational knowledge (exposition), study worked examples (imitation learning), then practice through trial and error (reinforcement learning). This mirrors how large language models (LLMs) learn, particularly during their RL phase.
+Imagine learning to solve a mathematical equation like finding the sum of real solutions to 
+
+$$
+a - \frac{a+x}{x} = x
+$$
+
+You might start by reviewing foundational knowledge (exposition), study worked examples (imitation learning), then practice through trial and error (reinforcement learning). This mirrors how large language models (LLMs) learn, particularly during their RL phase.
 
 While pre-training and supervised fine-tuning teach basic patterns, true reasoning emerges in the RL stage – where models "practice" solving problems and optimize their strategies through feedback.
 
@@ -76,14 +82,38 @@ D --> C
 
 ## RL in Action: Equation Solving Case Study
 
-**Problem**: Solve \( 3 - \frac{3+y}{y} = y \)  
+**Problem**: Solve 
+
+$$
+3 - \frac{3+y}{y} = y
+$$
+
 **Typical RL Learning Path**:
-1. Initial attempt:  
-   \( 3y - (3+y) = y^2 \) → \( y^2 - 2y + 3 = 0 \) (No real solutions ❌)
-2. Feedback analysis:  
-   Discovers domain restriction \( y ≠ 0 \)
-3. "Aha" moment:  
-   Factorizes correctly → \( (y-1)(y-3) = 0 \) → Solutions: 1, 3 ✅
+1. Initial attempt:
+
+$$
+3y - (3+y) = y^2 \implies y^2 - 2y + 3 = 0 \quad \text{(No real solutions ❌)}
+$$
+
+3. Feedback analysis:  
+   Discovers domain restriction 
+
+   $$
+   y ≠ 0
+   $$
+
+4. "Aha" moment:  
+   Factorizes correctly 
+
+   $$
+   (y-1)(y-3) = 0 
+   $$
+
+   Solutions: 
+
+   $$
+   1, 3 \quad ✅
+   $$
 
 **Key Insight**: Through 143 iterations, the model learns to:  
 - Check domain restrictions first  
