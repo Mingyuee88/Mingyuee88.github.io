@@ -81,6 +81,7 @@ $$
 $$
 
 **Typical RL Learning Path**:
+
 1. Initial attempt:
 
 $$
@@ -90,22 +91,22 @@ $$
 2. Feedback analysis:  
    Discovers domain restriction 
 
-$$
-y ≠ 0
-$$
+   $$
+   y ≠ 0
+   $$
 
 3. "Aha" moment:  
-Factorizes correctly 
+   Factorizes correctly 
 
-$$
-(y-1)(y-3) = 0 
-$$
+   $$
+   (y-1)(y-3) = 0 
+   $$
 
-Solutions: 
+   Solutions: 
 
-$$
-y = 1, y = 3 ✅
-$$
+   $$
+   y = 1, \quad y = 3 \quad ✅
+   $$
 
 **Key Insight**: Through 143 iterations, the model learns to:  
 - Check domain restrictions first  
