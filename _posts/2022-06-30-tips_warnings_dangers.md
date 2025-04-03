@@ -84,9 +84,9 @@ $$
 
 1. Initial attempt:
 
-$$
-3y - (3+y) = y^2 \implies y^2 - 2y + 3 = 0 \quad \text{(No real solutions ❌)}
-$$
+   $$
+   3y - (3+y) = y^2 \implies y^2 - 2y + 3 = 0 \quad \text{(No real solutions ❌)}
+   $$
 
 2. Feedback analysis:  
    Discovers domain restriction 
