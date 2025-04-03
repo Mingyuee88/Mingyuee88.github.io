@@ -6,14 +6,6 @@ category: Jekyll
 layout: post
 ---
 
----
-title: REINFORCEMENT LEARNING
-author: Tao He
-date: 2022-06-30
-category: Jekyll
-layout: post
----
-
 # Reinforcement Learning (RL)
 
 ## How Do We Learn to Solve Problems?
@@ -21,8 +13,6 @@ layout: post
 Imagine learning to solve a mathematical equation like finding the sum of real solutions to \( a - \frac{a+x}{x} = x \). You might start by reviewing foundational knowledge (exposition), study worked examples (imitation learning), then practice through trial and error (reinforcement learning). This mirrors how large language models (LLMs) learn, particularly during their RL phase.
 
 While pre-training and supervised fine-tuning teach basic patterns, true reasoning emerges in the RL stage – where models "practice" solving problems and optimize their strategies through feedback.
-
----
 
 ## The Three Stages of Learning
 
@@ -48,13 +38,33 @@ While pre-training and supervised fine-tuning teach basic patterns, true reasoni
 - **Delayed Gratification**: Sacrifices short-term gains (e.g., quick guesses) for optimal long-term strategies
 
 ### Real-World Applications
-| Domain          | RL Implementation          | Outcome                          |
-|-----------------|----------------------------|-----------------------------------|
-| Personalized Marketing | Dynamic ad recommendations | 23% higher CTR in A/B tests      |
-| Cloud Optimization | Resource allocation        | 17% cost reduction for AWS users |
-| Algorithmic Trading | Portfolio management       | 12% annual ROI improvement       |
+<table>
+    <thead>
+        <tr>
+            <th>Domain</th>
+            <th>RL Implementation</th>
+            <th>Outcome</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Personalized Marketing</td>
+            <td>Dynamic ad recommendations</td>
+            <td>23% higher CTR in A/B tests</td>
+        </tr>
+        <tr>
+            <td>Cloud Optimization</td>
+            <td>Resource allocation</td>
+            <td>17% cost reduction for AWS users</td>
+        </tr>
+        <tr>
+            <td>Algorithmic Trading</td>
+            <td>Portfolio management</td>
+            <td>12% annual ROI improvement</td>
+        </tr>
+    </tbody>
+</table>
 
----
 
 ## RL in Action: Equation Solving Case Study
 
