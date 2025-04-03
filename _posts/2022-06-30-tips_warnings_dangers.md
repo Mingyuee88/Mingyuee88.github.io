@@ -144,5 +144,5 @@ This mismatch reveals both RLHF's power and pitfalls.
    
    # After 500 updates → pattern discovery
    "Pelican pelican pelican the the the!"  # Scores higher 🤯
-   ```
+   
    ---
