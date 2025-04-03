@@ -98,22 +98,22 @@ $$
 3. Feedback analysis:  
    Discovers domain restriction 
 
-   $$
-   y ≠ 0
-   $$
+$$
+y ≠ 0
+$$
 
 4. "Aha" moment:  
-   Factorizes correctly 
+Factorizes correctly 
 
-   $$
-   (y-1)(y-3) = 0 
-   $$
+$$
+(y-1)(y-3) = 0 
+$$
 
-   Solutions: 
+Solutions: 
 
-   $$
-   1, 3 \quad ✅
-   $$
+$$
+y = 1, y = 3 ✅
+$$
 
 **Key Insight**: Through 143 iterations, the model learns to:  
 - Check domain restrictions first  
