@@ -103,13 +103,29 @@ This mismatch reveals both RLHF's power and pitfalls.
 
 ## RLHF Workflow
 
-```mermaid
-graph TD
-A[Human Feedback] --> B(Reward Model Training)
-B --> C{RL Optimization}
-C --> D[Policy Update]
-D --> C
-```
+<ul>
+    <li>Human Feedback
+        <ul>
+            <li>↓</li>
+            <li>Reward Model Training
+                <ul>
+                    <li>↓</li>
+                    <li>RL Optimization
+                        <ul>
+                            <li>↓</li>
+                            <li>Policy Update
+                                <ul>
+                                    <li>↖︎</li>
+                                    <li>(回到 RL Optimization)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
 
 ### Key Components
 1. **Preference Collection**  
