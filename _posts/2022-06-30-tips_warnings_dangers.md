@@ -23,15 +23,7 @@ While pre-training and supervised fine-tuning teach basic patterns, true reasoni
 
 ## The Three Stages of Learning
 
-
-```mermaid
-graph TD
-A[Human Feedback] --> B(Reward Model Training)
-B --> C{RL Optimization}
-C --> D[Policy Update]
-D --> C
-```
-
+![image](https://github.com/user-attachments/assets/db236b6f-54ee-475a-8df9-7028e26f84cf)
 
 1. **Exposition (Pre-training)**  
    - Builds foundational knowledge from massive datasets  
@@ -141,7 +133,13 @@ This mismatch reveals both RLHF's power and pitfalls.
 
 ## RLHF Workflow
 
-![image](https://github.com/user-attachments/assets/19c79693-eed5-4944-804e-afbf1e996ef9)
+```mermaid
+graph TD
+A[Human Feedback] --> B(Reward Model Training)
+B --> C{RL Optimization}
+C --> D[Policy Update]
+D --> C
+```
 
 ### Key Components
 1. **Preference Collection**  
