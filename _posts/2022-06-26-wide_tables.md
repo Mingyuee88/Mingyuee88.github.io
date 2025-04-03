@@ -29,7 +29,8 @@ In supervised finetuning, the text needs to be converted into a format that the 
 
 [Click here to see how tokenizer works !](https://tiktokenizer.vercel.app/)
 
-![image](https://github.com/user-attachments/assets/acbf3379-7fee-4bf9-9440-f3d4fea5f77b)
+![image](https://github.com/user-attachments/assets/7224dcaf-db0e-4809-8741-fbec9c8261e3)
+
 
 ### Dialogue Datasets
 
