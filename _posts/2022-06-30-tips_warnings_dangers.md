@@ -122,9 +122,9 @@ This mismatch reveals both RLHF's power and pitfalls.
 ## Advantages & Challenges
 
 ✅ **Upsides**:
-- **Non-Verifiable Domain Mastery**: Excels in subjective areas like humor generation (<span style="color:blue">"Which joke is funnier?"</span> vs objective <span style="color:blue">"Solve 2+2"</span>)
-- **Human Efficiency**: Reduces annotation needs from 1M to 1K samples via reward modeling
-- **Style Alignment**: Learns nuanced preferences (e.g., <span style="color:blue">"Make explanations beginner-friendly"</span>)
+1. **Non-Verifiable Domain Mastery**: Excels in subjective areas like humor generation (<span style="color:blue">"Which joke is funnier?"</span> vs objective <span style="color:blue">"Solve 2+2"</span>)
+2. **Human Efficiency**: Reduces annotation needs from 1M to 1K samples via reward modeling
+3. **Style Alignment**: Learns nuanced preferences (e.g., <span style="color:blue">"Make explanations beginner-friendly"</span>)
 
 ⚠️ **Downsides**:  
 *The Perils of Imperfect Human Proxies*
@@ -144,3 +144,5 @@ This mismatch reveals both RLHF's power and pitfalls.
    
    # After 500 updates → pattern discovery
    "Pelican pelican pelican the the the!"  # Scores higher 🤯
+   ```
+   ---
