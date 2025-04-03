@@ -103,30 +103,14 @@ This mismatch reveals both RLHF's power and pitfalls.
 
 ## RLHF Workflow
 
-<ul>
-    <li>Human Feedback
-        <ul>
-            <li>↓</li>
-            <li>Reward Model Training
-                <ul>
-                    <li>↓</li>
-                    <li>RL Optimization
-                        <ul>
-                            <li>↓</li>
-                            <li>Policy Update
-                                <ul>
-                                    <li>↖︎</li>
-                                    <li>(回到 RL Optimization)</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-</ul>
 
+```mermaid
+graph TD
+A[Human Feedback] --> B(Reward Model Training)
+B --> C{RL Optimization}
+C --> D[Policy Update]
+D --> C
+```
 ### Key Components
 1. **Preference Collection**  
    - 1,000 prompts → 5 responses each → human rankings
