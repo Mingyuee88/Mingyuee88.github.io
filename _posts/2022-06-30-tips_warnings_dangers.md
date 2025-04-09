@@ -110,8 +110,6 @@ $$
 - Prefer factoring over quadratic formula  
 - Verify solutions post-calculation
 
-## Let's play a game to experience RL
-
 <div class="rl-game-module">
     <h2>Interactive Exercise: The Number Guessing Game</h2>
     
