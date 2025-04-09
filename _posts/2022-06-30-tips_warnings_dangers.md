@@ -213,48 +213,60 @@ $$
 
         // Initialize learning chart
         let learningChart;
-        function initChart() {
-            const ctx = document.getElementById('rl-learning-chart').getContext('2d');
-            learningChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: [],
-                    datasets: [{
-                        label: 'Your Guesses',
-                        data: [],
-                        borderColor: '#3498db',
-                        backgroundColor: 'rgba(52, 152, 219, 0.2)',
-                        tension: 0.1,
-                        fill: true
-                    },
-                    {
-                        label: 'Optimal (Binary Search)',
-                        data: [],
-                        borderColor: '#27ae60',
-                        borderDash: [5, 5],
-                        pointRadius: 0
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: {
-                            beginAtZero: false,
-                            title: {
-                                display: true,
-                                text: 'Number of Guesses'
-                            }
-                        },
-                        x: {
-                            title: {
-                                display: true,
-                                text: 'Game Number'
-                            }
-                        }
-                    }
-                }
-            });
-        }
+      // Initialize learning chart with proper y-axis scaling
+      function initChart() {
+          const ctx = document.getElementById('rl-learning-chart').getContext('2d');
+          learningChart = new Chart(ctx, {
+              type: 'line',
+              data: {
+                  labels: ['Game 1'],  // Initialize with at least one label
+                  datasets: [{
+                      label: 'Your Guesses',
+                      data: [null],  // Initialize with null to prevent zero value
+                      borderColor: '#3498db',
+                      backgroundColor: 'rgba(52, 152, 219, 0.2)',
+                      tension: 0.1,
+                      fill: true
+                  },
+                  {
+                      label: 'Optimal (Binary Search)',
+                      data: [null],  // Initialize with null to prevent zero value
+                      borderColor: '#27ae60',
+                      borderDash: [5, 5],
+                      pointRadius: 0
+                  }]
+              },
+              options: {
+                  responsive: true,
+                  scales: {
+                      y: {
+                          beginAtZero: true,
+                          min: 0,
+                          suggestedMin: 1,
+                          suggestedMax: 10,  // Start with a reasonable scale for guesses
+                          ticks: {
+                              stepSize: 1,  // Use whole numbers for guesses
+                              precision: 0
+                          },
+                          title: {
+                              display: true,
+                              text: 'Number of Guesses'
+                          }
+                      },
+                      x: {
+                          title: {
+                              display: true,
+                              text: 'Game Number'
+                          }
+                      }
+                  },
+                  animation: {
+                      duration: 500
+                  }
+              }
+          });
+      }
+
 
         // Get range based on difficulty
         function getDifficultyRange(difficulty) {
@@ -351,12 +363,20 @@ $$
         }
 
         // Update the learning curve chart
-        function updateChart() {
-            learningChart.data.labels = gameHistory.map((_, i) => `Game ${i + 1}`);
-            learningChart.data.datasets[0].data = gameHistory.map(game => game.guesses);
-            learningChart.data.datasets[1].data = gameHistory.map(game => game.optimal);
-            learningChart.update();
-        }
+      // Update the learning curve chart with better handling
+      function updateChart() {
+          if (gameHistory.length === 0) return;
+          
+          learningChart.data.labels = gameHistory.map((_, i) => `Game ${i + 1}`);
+          learningChart.data.datasets[0].data = gameHistory.map(game => game.guesses);
+          learningChart.data.datasets[1].data = gameHistory.map(game => game.optimal);
+          
+          // Update y-axis scale based on actual data
+          const maxGuesses = Math.max(...gameHistory.map(game => game.guesses));
+          learningChart.options.scales.y.suggestedMax = Math.max(10, Math.ceil(maxGuesses * 1.2));
+          
+          learningChart.update();
+      }
 
         // Update statistics display
         function updateStats() {
