@@ -110,8 +110,8 @@ $$
 - Prefer factoring over quadratic formula  
 - Verify solutions post-calculation
 
+## Interactive Exercise: The Number Guessing Game
 <div class="rl-game-module">
-    <h2>Interactive Exercise: The Number Guessing Game</h2>
     
     <div class="rl-explanation">
         <p>This simple game demonstrates key reinforcement learning concepts:</p>
@@ -139,7 +139,6 @@ $$
     </div>
 
     <div id="rl-game-area" class="hidden">
-        <h3>I'm thinking of a number... <span id="rl-range-display"></span></h3>
         <div class="guess-input">
             <input type="number" id="rl-guess-input" class="rl-game-input" placeholder="Enter your guess">
             <button id="rl-submit-guess" class="rl-game-btn">Guess</button>
@@ -153,7 +152,7 @@ $$
     </div>
 
     <div id="rl-ai-demo" class="strategy-demo hidden">
-        <h3>AI Strategy Demonstration (Binary Search)</h3>
+        <h3>AI Strategy Demonstration</h3>
         <p>Watch how an AI uses the optimal strategy:</p>
         <div id="rl-ai-thinking" class="ai-thinking"></div>
         <div id="rl-ai-history"></div>
@@ -162,7 +161,7 @@ $$
     </div>
     
     <div class="learning-section">
-        <h3>Your Learning Curve</h3>
+        <h3>Learning Curve</h3>
         <div class="chart-container">
             <canvas id="rl-learning-chart"></canvas>
         </div>
