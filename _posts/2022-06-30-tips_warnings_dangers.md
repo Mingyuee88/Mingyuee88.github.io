@@ -6,8 +6,6 @@ category: Jekyll
 layout: post
 ---
 
-# Reinforcement Learning (RL)
-
 ## How Do We Learn to Solve Problems?
 
 Imagine learning to solve a mathematical equation like finding the sum of real solutions to 
