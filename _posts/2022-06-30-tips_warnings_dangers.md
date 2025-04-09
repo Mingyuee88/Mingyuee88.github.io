@@ -152,7 +152,6 @@ $$
     </div>
 
     <div id="rl-ai-demo" class="strategy-demo hidden">
-        <h3>AI Strategy Demonstration</h3>
         <p>Watch how an AI uses the optimal strategy:</p>
         <div id="rl-ai-thinking" class="ai-thinking"></div>
         <div id="rl-ai-history"></div>
@@ -161,7 +160,6 @@ $$
     </div>
     
     <div class="learning-section">
-        <h3>Learning Curve</h3>
         <div class="chart-container">
             <canvas id="rl-learning-chart"></canvas>
         </div>
