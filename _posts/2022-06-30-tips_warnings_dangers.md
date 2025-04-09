@@ -115,194 +115,77 @@ $$
 
 # Let's play a game to experience RL
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RL Number Guessing Game</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f7f9fc;
-            color: #333;
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        .game-container {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        .controls {
-            margin: 20px 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
-        }
-        button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #2980b9;
-        }
-        button:disabled {
-            background-color: #95a5a6;
-            cursor: not-allowed;
-        }
-        input, select {
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .history {
-            margin-top: 20px;
-            max-height: 200px;
-            overflow-y: auto;
-            padding: 10px;
-            background-color: #f8f9fa;
-            border-radius: 4px;
-        }
-        .feedback {
-            margin: 15px 0;
-            padding: 10px;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-        .too-high {
-            background-color: #ffcccc;
-            color: #d63031;
-        }
-        .too-low {
-            background-color: #cce5ff;
-            color: #0984e3;
-        }
-        .correct {
-            background-color: #d4edda;
-            color: #27ae60;
-        }
-        .chart-container {
-            width: 100%;
-            height: 300px;
-            margin-top: 20px;
-        }
-        .explanation {
-            background-color: #f1f9ff;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 20px;
-            border-left: 4px solid #3498db;
-        }
-        .hidden {
-            display: none;
-        }
-        .strategy-demo {
-            margin: 20px 0;
-            padding: 15px;
-            background-color: #fff8e1;
-            border-radius: 8px;
-            border-left: 4px solid #ffc107;
-        }
-        .ai-thinking {
-            font-style: italic;
-            color: #555;
-        }
-        .guess-input {
-            display: flex;
-            gap: 10px;
-        }
-        @media (max-width: 600px) {
-            .controls {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-    </style>
-</head>
-<body>
-    <h1>Reinforcement Learning: Number Guessing Game</h1>
+<div class="rl-game-module">
+    <h2>Interactive Exercise: The Number Guessing Game</h2>
     
-    <div class="explanation">
-        <h3>Learning Reinforcement Learning Through Play</h3>
-        <p>This game demonstrates key concepts in Reinforcement Learning:</p>
+    <div class="rl-explanation">
+        <p>This simple game demonstrates key reinforcement learning concepts:</p>
         <ul>
-            <li><strong>Policy</strong>: Your strategy for guessing numbers</li>
-            <li><strong>Reward</strong>: Feedback when you're getting closer</li>
-            <li><strong>State</strong>: The range of possible numbers based on previous guesses</li>
-            <li><strong>Learning</strong>: Improving your strategy over multiple games</li>
+            <li><strong>State</strong>: The current range of possible numbers</li>
+            <li><strong>Action</strong>: Your guess</li>
+            <li><strong>Reward</strong>: Feedback (too high/too low)</li>
+            <li><strong>Policy</strong>: Your strategy for selecting numbers</li>
         </ul>
-        <p>Try to develop an optimal strategy that minimizes the number of guesses needed!</p>
+        <p>Try different strategies and see how your performance improves over time!</p>
     </div>
 
-    <div class="game-container">
-        <h2>Game Settings</h2>
-        <div class="controls">
-            <div>
-                <label for="difficulty">Difficulty Level:</label>
-                <select id="difficulty">
-                    <option value="easy">Easy (1-100)</option>
-                    <option value="medium">Medium (1-1,000)</option>
-                    <option value="hard">Hard (1-10,000)</option>
-                    <option value="expert">Expert (1-100,000)</option>
-                </select>
-            </div>
-            <button id="start-game">Start New Game</button>
-            <button id="show-ai-demo">Show AI Strategy Demo</button>
-        </div>
-
-        <div id="game-area" class="hidden">
-            <h3>I'm thinking of a number... <span id="range-display"></span></h3>
-            <div class="guess-input">
-                <input type="number" id="guess-input" placeholder="Enter your guess">
-                <button id="submit-guess">Guess</button>
-            </div>
-            <div id="feedback" class="feedback"></div>
-            <div>Guesses: <span id="guess-count">0</span></div>
-            <div class="history">
-                <h4>Guess History:</h4>
-                <ul id="guess-history"></ul>
-            </div>
-        </div>
-
-        <div id="ai-demo" class="strategy-demo hidden">
-            <h3>AI Strategy Demonstration</h3>
-            <p>Watch how an AI would solve this using binary search (optimal strategy):</p>
-            <div id="ai-thinking" class="ai-thinking"></div>
-            <div id="ai-history"></div>
-            <button id="ai-next-step" class="hidden">Next Step</button>
-            <button id="ai-auto-solve">Auto-Solve</button>
-        </div>
-    </div>
-
-    <div class="game-container">
-        <h2>Your Learning Curve</h2>
-        <p>This chart shows how your performance improves over multiple games:</p>
-        <div class="chart-container">
-            <canvas id="learning-chart"></canvas>
-        </div>
+    <div class="game-controls">
         <div>
-            <h3>Performance Metrics</h3>
-            <p>Average guesses: <span id="avg-guesses">-</span></p>
-            <p>Best game: <span id="best-game">-</span> guesses</p>
-            <p>Games played: <span id="games-played">0</span></p>
+            <label for="rl-difficulty">Difficulty:</label>
+            <select id="rl-difficulty" class="rl-game-select">
+                <option value="easy">Easy (1-100)</option>
+                <option value="medium">Medium (1-1,000)</option>
+                <option value="hard">Hard (1-10,000)</option>
+                <option value="expert">Expert (1-100,000)</option>
+            </select>
+        </div>
+        <button id="rl-start-game" class="rl-game-btn">Start New Game</button>
+        <button id="rl-show-ai-demo" class="rl-game-btn">Show AI Strategy</button>
+    </div>
+
+    <div id="rl-game-area" class="hidden">
+        <h3>I'm thinking of a number... <span id="rl-range-display"></span></h3>
+        <div class="guess-input">
+            <input type="number" id="rl-guess-input" class="rl-game-input" placeholder="Enter your guess">
+            <button id="rl-submit-guess" class="rl-game-btn">Guess</button>
+        </div>
+        <div id="rl-feedback" class="feedback"></div>
+        <div>Guesses: <span id="rl-guess-count">0</span></div>
+        <div class="guess-history">
+            <h4>Guess History:</h4>
+            <ul id="rl-guess-history"></ul>
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
-    <script>
+    <div id="rl-ai-demo" class="strategy-demo hidden">
+        <h3>AI Strategy Demonstration (Binary Search)</h3>
+        <p>Watch how an AI uses the optimal strategy:</p>
+        <div id="rl-ai-thinking" class="ai-thinking"></div>
+        <div id="rl-ai-history"></div>
+        <button id="rl-ai-next-step" class="rl-game-btn hidden">Next Step</button>
+        <button id="rl-ai-auto-solve" class="rl-game-btn">Auto-Solve</button>
+    </div>
+    
+    <div class="learning-section">
+        <h3>Your Learning Curve</h3>
+        <div class="chart-container">
+            <canvas id="rl-learning-chart"></canvas>
+        </div>
+        <div class="stats">
+            <p>Average guesses: <span id="rl-avg-guesses">-</span></p>
+            <p>Best game: <span id="rl-best-game">-</span> guesses</p>
+            <p>Games played: <span id="rl-games-played">0</span></p>
+        </div>
+    </div>
+</div>
+
+<!-- Include Chart.js if not already in your site -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+
+<!-- Number Guessing Game Script -->
+<script>
+    // Immediately-invoked function expression to avoid global namespace pollution
+    (function() {
         // Game variables
         let targetNumber;
         let minRange;
@@ -317,35 +200,35 @@ $$
         let aiStepInterval;
 
         // DOM elements
-        const difficultySelect = document.getElementById('difficulty');
-        const startGameBtn = document.getElementById('start-game');
-        const showAiDemoBtn = document.getElementById('show-ai-demo');
-        const gameArea = document.getElementById('game-area');
-        const rangeDisplay = document.getElementById('range-display');
-        const guessInput = document.getElementById('guess-input');
-        const submitGuessBtn = document.getElementById('submit-guess');
-        const feedbackEl = document.getElementById('feedback');
-        const guessCountEl = document.getElementById('guess-count');
-        const guessHistoryEl = document.getElementById('guess-history');
-        const aiDemo = document.getElementById('ai-demo');
-        const aiThinking = document.getElementById('ai-thinking');
-        const aiHistory = document.getElementById('ai-history');
-        const aiNextStepBtn = document.getElementById('ai-next-step');
-        const aiAutoSolveBtn = document.getElementById('ai-auto-solve');
-        const avgGuessesEl = document.getElementById('avg-guesses');
-        const bestGameEl = document.getElementById('best-game');
-        const gamesPlayedEl = document.getElementById('games-played');
+        const difficultySelect = document.getElementById('rl-difficulty');
+        const startGameBtn = document.getElementById('rl-start-game');
+        const showAiDemoBtn = document.getElementById('rl-show-ai-demo');
+        const gameArea = document.getElementById('rl-game-area');
+        const rangeDisplay = document.getElementById('rl-range-display');
+        const guessInput = document.getElementById('rl-guess-input');
+        const submitGuessBtn = document.getElementById('rl-submit-guess');
+        const feedbackEl = document.getElementById('rl-feedback');
+        const guessCountEl = document.getElementById('rl-guess-count');
+        const guessHistoryEl = document.getElementById('rl-guess-history');
+        const aiDemo = document.getElementById('rl-ai-demo');
+        const aiThinking = document.getElementById('rl-ai-thinking');
+        const aiHistory = document.getElementById('rl-ai-history');
+        const aiNextStepBtn = document.getElementById('rl-ai-next-step');
+        const aiAutoSolveBtn = document.getElementById('rl-ai-auto-solve');
+        const avgGuessesEl = document.getElementById('rl-avg-guesses');
+        const bestGameEl = document.getElementById('rl-best-game');
+        const gamesPlayedEl = document.getElementById('rl-games-played');
 
         // Initialize learning chart
         let learningChart;
         function initChart() {
-            const ctx = document.getElementById('learning-chart').getContext('2d');
+            const ctx = document.getElementById('rl-learning-chart').getContext('2d');
             learningChart = new Chart(ctx, {
                 type: 'line',
                 data: {
                     labels: [],
                     datasets: [{
-                        label: 'Number of Guesses',
+                        label: 'Your Guesses',
                         data: [],
                         borderColor: '#3498db',
                         backgroundColor: 'rgba(52, 152, 219, 0.2)',
@@ -576,9 +459,7 @@ $$
 
         // Initialize
         initChart();
-    </script>
-</body>
-</html>
-
+    })();
+</script>
 
 ---
