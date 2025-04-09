@@ -241,7 +241,7 @@ $$
                     responsive: true,
                     scales: {
                         y: {
-                            beginAtZero: true,
+                            beginAtZero: false,
                             title: {
                                 display: true,
                                 text: 'Number of Guesses'
