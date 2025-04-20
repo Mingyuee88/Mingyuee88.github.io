@@ -1,5 +1,5 @@
 ---
-title: MathJax and LaTeX
+title: Summary
 author: Tao He
 date: 2023-10-14
 category: Jekyll
@@ -7,41 +7,39 @@ layout: post
 mermaid: true
 ---
 
-This jekyll-theme supports [MathJax](https://www.mathjax.org/) to render $\LaTeX$
-and mathematics expressions.
 
-> ##### TIP
+
+> ##### Summary
 >
-> Currently, Kramdown uses double dollar sign delimiters for inline and display math:
-> [https://kramdown.gettalong.org/syntax.html#math-blocks](https://kramdown.gettalong.org/syntax.html#math-blocks).
+> In this website, we have explored the entire process of self-learning large language models (LLMs), from pre-training to reinforcement learning. Here’s a summary of what we’ve learned:
 {: .block-tip }
 
-e.g.,
+## 1. Pre-Training Stage
 
-```markdown
-The well known Pythagorean theorem $x^2 + y^2 = z^2$ was
-proved to be invalid for other exponents.
-Meaning the next equation has no integer solutions:
+Pre-training is the foundational stage of large language models. By learning from a vast amount of data, the model masters the basic structure and patterns of language. This stage includes several important steps:
 
-$$ x^n + y^n = z^n $$
-```
+- **Data Download and Pre-Processing:** We start by collecting and processing a large corpus of text data to prepare for subsequent training.
+  
+- **Tokenization:** The text is then tokenized to convert it into an input format that the model can understand.
+  
+- **Neural Network Training:** Through training the neural network, the model learns language patterns and regularities present in the text data.
+  
+- **Inference:** Once training is complete, the model can perform inference and generate output based on input text.
 
-The well known Pythagorean theorem $x^2 + y^2 = z^2$ was
-proved to be invalid for other exponents.
-Meaning the next equation has no integer solutions:
+Additionally, this stage includes exploring and understanding foundational models such as GPT-2, which serve as a starting point for building more powerful models.
 
-$$ x^n + y^n = z^n $$
+## 2. Post-Training
 
-Another example with more complex markups:
+### 2.1 Supervised Fine-Tuning
 
-```markdown
-When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are
+The fine-tuning stage is crucial for optimizing the model further. In this phase, the pre-trained model is adjusted according to the specific task requirements, allowing it to better adapt to tasks such as text generation and question answering by training on labeled datasets.
 
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
-```
+### 2.2 Reinforcement Learning
 
-When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are
+Reinforcement learning plays a vital role in LLM development, especially in dynamic environments and complex problem-solving. We introduced the basic concepts of reinforcement learning and how it enhances the model's performance and adaptability.
 
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+### 2.3 Reinforcement Learning with Human Feedback (RLHF)
 
-Refer to the [MathJax website](https://docs.mathjax.org/en/latest/index.html) for more examples.
+In this process, the model benefits not only from algorithmic feedback but also from human feedback. By integrating reinforcement learning with human insights, the model gradually learns to provide more reasonable and accurate responses in practical applications.
+
+Through this overview, you should now have a solid understanding of the two key steps in LLM development: pre-training and post-training. To conclude your learning journey, let’s take a small test!
