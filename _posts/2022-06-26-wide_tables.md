@@ -23,6 +23,82 @@ The foundation of supervised finetuning lies in extensive dialogue data that sim
 These dialogues help the model learn how to understand questions and provide reasonable answers.
 
 
+<!-- 👇 微调小游戏容器 -->
+<div id="finetuning-game" style="border: 1px solid #ccc; padding: 1em; border-radius: 10px; margin: 2em 0;">
+  <h3>🎮 微调指挥官游戏</h3>
+  <p>请为以下文本打标签（正面 / 负面），看看你训练的模型能变得多聪明！</p>
+  <div id="game-content">
+    <!-- 游戏内容将由 JS 渲染 -->
+  </div>
+</div>
+<script>
+const samples = [
+  "This movie was fantastic and full of surprises!",
+  "The plot was terrible and I hated the characters.",
+  "An absolute masterpiece with stunning visuals.",
+  "It was a waste of time, so boring.",
+  "I really enjoyed the soundtrack and the story."
+];
+
+let labeledData = [];
+let model = { good: 0, bad: 0 };
+
+function renderGame() {
+  const container = document.getElementById('game-content');
+  if (samples.length === 0) {
+    container.innerHTML = `
+      <p>✅ 你已标注完所有文本，点击下方按钮开始微调模型：</p>
+      <button onclick="trainModel()">🚀 开始训练</button>
+    `;
+    return;
+  }
+  const text = samples.shift();
+  container.innerHTML = `
+    <p><strong>文本：</strong>${text}</p>
+    <button onclick="labelSample('${text}', 'positive')">👍 正面</button>
+    <button onclick="labelSample('${text}', 'negative')">👎 负面</button>
+  `;
+}
+
+function labelSample(text, label) {
+  labeledData.push({ text, label });
+  renderGame();
+}
+
+function trainModel() {
+  model = { good: 0, bad: 0 };
+  labeledData.forEach(({ text, label }) => {
+    if (label === 'positive') model.good += 1;
+    else model.bad += 1;
+  });
+
+  const score = model.good / (model.good + model.bad);
+  const prediction = score > 0.5 ? "😀 模型偏向正面" : "😠 模型偏向负面";
+
+  document.getElementById('game-content').innerHTML = `
+    <p>📊 模拟训练完成！</p>
+    <p>训练样本总数：${labeledData.length}</p>
+    <p>正面样本数：${model.good}</p>
+    <p>负面样本数：${model.bad}</p>
+    <p><strong>模型预测倾向：</strong> ${prediction}</p>
+    <button onclick="testModel()">🔍 让模型尝试新预测</button>
+  `;
+}
+
+function testModel() {
+  const testText = "The movie had great visuals but poor acting.";
+  const score = model.good / (model.good + model.bad);
+  const result = testText.includes("great") && score > 0.5 ? "正面" : "负面";
+
+  document.getElementById('game-content').innerHTML = `
+    <p>🔎 模型预测新文本：</p>
+    <p><em>${testText}</em></p>
+    <p>模型预测结果：<strong>${result}</strong></p>
+  `;
+}
+
+renderGame();
+</script>
 
 ### Conversation Protocol / Format
 In supervised finetuning, the text needs to be converted into a format that the model can understand. The key tool here is the **tokenizer** which splits text into units (tokens) that the model can process, such as words or subwords. It ensures the model can accurately read the input text, laying the groundwork for subsequent learning and generation.
