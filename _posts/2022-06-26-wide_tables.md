@@ -32,7 +32,7 @@ These dialogues help the model learn how to understand questions and provide rea
   </div>
 </div>
 
-**<script>
+<script>
 const samples = [
   "This movie was fantastic and full of surprises!",
   "The plot was terrible and I hated the characters.",
