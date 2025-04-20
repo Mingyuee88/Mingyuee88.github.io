@@ -4,7 +4,7 @@ category: Jekyll
 layout: post
 ---
 
-Pre-training is a foundational phase in the development of Large Language Models (LLMs), where the model learns from extensive datasets 。to recognize and generate human language. This process involves exposing the model to a wide variety of text, enabling it to capture the  intricacies of grammar, context, and meaning. Through pre-training, LLMs develop the ability to predict words, understand relationships,  and produce coherent text.
+Pre-training is a foundational phase in the development of Large Language Models (LLMs), where the model learns from extensive datasets to recognize and generate human language. This process involves exposing the model to a wide variety of text, enabling it to capture the  intricacies of grammar, context, and meaning. Through pre-training, LLMs develop the ability to predict words, understand relationships,  and produce coherent text.
 
 ## Steps of Pre-Training
 
