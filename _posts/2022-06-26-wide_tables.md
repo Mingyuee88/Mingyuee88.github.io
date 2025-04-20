@@ -23,15 +23,16 @@ The foundation of supervised finetuning lies in extensive dialogue data that sim
 These dialogues help the model learn how to understand questions and provide reasonable answers.
 
 
-<!-- 👇 微调小游戏容器 -->
+<!-- 👇 Supervised Finetuning Game Container -->
 <div id="finetuning-game" style="border: 1px solid #ccc; padding: 1em; border-radius: 10px; margin: 2em 0;">
-  <h3>🎮 微调指挥官游戏</h3>
-  <p>请为以下文本打标签（正面 / 负面），看看你训练的模型能变得多聪明！</p>
+  <h3>🎮 Supervised Finetuning Game</h3>
+  <p>Label the following text (Positive / Negative) and see how the model improves with your annotations!</p>
   <div id="game-content">
-    <!-- 游戏内容将由 JS 渲染 -->
+    <!-- Game content will be rendered by JS -->
   </div>
 </div>
-<script>
+
+**<script>
 const samples = [
   "This movie was fantastic and full of surprises!",
   "The plot was terrible and I hated the characters.",
@@ -98,7 +99,95 @@ function testModel() {
 }
 
 renderGame();
+</script>**<script>
+const samples = [
+  "This movie was fantastic and full of surprises!",
+  "The plot was terrible and I hated the characters.",
+  "An absolute masterpiece with stunning visuals.",
+  "It was a waste of time, so boring.",
+  "I really enjoyed the soundtrack and the story."
+  // Add more samples if needed
+];
+
+let labeledData = [];
+let model = { positive: 0, negative: 0 };
+
+function renderGame() {
+  const container = document.getElementById('game-content');
+  
+  if (samples.length === 0) {
+    container.innerHTML = `
+      <p>✅ You've labeled all the samples! Click below to start retraining the model:</p>
+      <button onclick="trainModel()">🚀 Start Training</button>
+      <button onclick="resetGame()">🔄 Start Over</button>
+    `;
+    return;
+  }
+  
+  const text = samples.shift();
+  container.innerHTML = `
+    <p><strong>Text:</strong> ${text}</p>
+    <button onclick="labelSample('${text}', 'positive')">👍 Positive</button>
+    <button onclick="labelSample('${text}', 'negative')">👎 Negative</button>
+  `;
+}
+
+function labelSample(text, label) {
+  labeledData.push({ text, label });
+  renderGame();
+}
+
+function trainModel() {
+  model = { positive: 0, negative: 0 };
+  labeledData.forEach(({ label }) => {
+    if (label === 'positive') model.positive += 1;
+    else model.negative += 1;
+  });
+
+  const score = model.positive / (model.positive + model.negative);
+  const prediction = score > 0.5 ? "😀 Model leans positive" : "😠 Model leans negative";
+
+  document.getElementById('game-content').innerHTML = `
+    <p>📊 Training complete!</p>
+    <p>Total labeled samples: ${labeledData.length}</p>
+    <p>Positive samples: ${model.positive}</p>
+    <p>Negative samples: ${model.negative}</p>
+    <p><strong>Model Prediction:</strong> ${prediction}</p>
+    <button onclick="testModel()">🔍 Test the Model</button>
+    <button onclick="trainModel()">🔄 Retrain Model</button>
+  `;
+}
+
+function testModel() {
+  const testText = "The movie had great visuals but poor acting.";
+  const score = model.positive / (model.positive + model.negative);
+  const result = testText.includes("great") && score > 0.5 ? "Positive" : "Negative";
+
+  document.getElementById('game-content').innerHTML = `
+    <p>🔎 Model Prediction on New Text:</p>
+    <p><em>${testText}</em></p>
+    <p>Model's prediction: <strong>${result}</strong></p>
+    <button onclick="trainModel()">🔄 Retrain the Model</button>
+    <button onclick="resetGame()">🔄 Start Over</button>
+  `;
+}
+
+function resetGame() {
+  samples.push(
+    "This movie was fantastic and full of surprises!",
+    "The plot was terrible and I hated the characters.",
+    "An absolute masterpiece with stunning visuals.",
+    "It was a waste of time, so boring.",
+    "I really enjoyed the soundtrack and the story."
+  );
+  labeledData = [];
+  model = { positive: 0, negative: 0 };
+  renderGame();
+}
+
+renderGame();
 </script>
+
 
 ### Conversation Protocol / Format
 In supervised finetuning, the text needs to be converted into a format that the model can understand. The key tool here is the **tokenizer** which splits text into units (tokens) that the model can process, such as words or subwords. It ensures the model can accurately read the input text, laying the groundwork for subsequent learning and generation.
