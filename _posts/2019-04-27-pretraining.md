@@ -19,3 +19,5 @@ In the following sections, we will explore the key stages involved in pre-traini
 4. **Inference**: Finally, we will explore how the trained model generates predictions or responses based on new input data. This stage will highlight the practical applications of LLMs and their interactions with users in real-world scenarios.
 
 By understanding these stages, you will gain valuable insights into the pre-training process and the mechanisms that enable LLMs to function effectively in language tasks.
+
+---
