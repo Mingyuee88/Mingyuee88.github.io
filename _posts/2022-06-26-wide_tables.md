@@ -11,7 +11,7 @@ layout: post
 ## Defination
 Supervised finetuning (SFT) is a technique that allows large language models (LLMs) to further train using human-annotated data. Its goal is to enhance model performance on specific tasks, such as answering user questions, generating text, or engaging in dialogue. Through this approach, models learn to respond to human inputs more accurately and reasonably.
 
-<!-- 👇 Supervised Finetuning Game Container -->
+<!-- 👇🎮 Supervised Finetuning Game Container -->
 <div id="finetuning-game" style="border: 1px solid #ccc; padding: 1em; border-radius: 10px; margin: 2em 0;">
   <h3> Supervised Finetuning Game</h3>
   <p>Label the following text (Positive / Negative) and see how the model improves with your annotations!</p>
