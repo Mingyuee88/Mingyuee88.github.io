@@ -39,166 +39,155 @@ In this process, the model benefits not only from algorithmic feedback but also 
 
 Through this overview, you should now have a solid understanding of the two key steps in LLM development: pre-training and post-training. To conclude your learning journey, let’s take a small test!
 
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大型语言模型(LLM)学习测验</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        .quiz-container {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 25px;
-            margin-bottom: 20px;
-        }
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .question {
-            margin-bottom: 25px;
-            padding: 15px;
-            border-radius: 8px;
-            background-color: #f7f9fc;
-        }
-        .question-title {
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-        .options {
-            margin-left: 10px;
-        }
-        .option {
-            margin-bottom: 10px;
-            padding: 8px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        .option:hover {
-            background-color: #e9f0f8;
-        }
-        input[type="radio"] {
-            margin-right: 10px;
-        }
-        label {
-            cursor: pointer;
-            display: inline-block;
-            width: 90%;
-        }
-        .submit-btn {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            display: block;
-            margin: 20px auto;
-            transition: background-color 0.3s;
-        }
-        .submit-btn:hover {
-            background-color: #2980b9;
-        }
-        .results {
-            display: none;
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #f1f9f7;
-            border-radius: 8px;
-            text-align: center;
-        }
-        .score {
-            font-size: 24px;
-            font-weight: bold;
-            color: #27ae60;
-            margin-bottom: 10px;
-        }
-        .feedback {
-            margin-top: 20px;
-        }
-        .feedback-item {
-            margin-bottom: 10px;
-            padding: 10px;
-            border-radius: 4px;
-        }
-        .correct {
-            background-color: #d4edda;
-            color: #155724;
-        }
-        .incorrect {
-            background-color: #f8d7da;
-            color: #721c24;
-        }
-        .explanation {
-            font-style: italic;
-            margin-top: 8px;
-            color: #555;
-        }
-        .restart-btn {
-            background-color: #2ecc71;
-            color: white;
-            border: none;
-            padding: 10px 18px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            display: block;
-            margin: 20px auto 0;
-            transition: background-color 0.3s;
-        }
-        .restart-btn:hover {
-            background-color: #27ae60;
-        }
-        .progress-container {
-            width: 100%;
-            background-color: #e0e0e0;
-            border-radius: 4px;
-            margin-bottom: 20px;
-        }
-        .progress-bar {
-            height: 10px;
-            background-color: #3498db;
-            border-radius: 4px;
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-    </style>
-</head>
-<body>
-    <h1>Large Language Model Learning Test</h1>
+<div class="llm-quiz-wrapper">
+    <h2>Large Language Model (LLM) Learning Quiz</h2>
     
-    <div class="quiz-container">
-        <div class="progress-container">
-            <div class="progress-bar" id="progress"></div>
+    <div class="llm-quiz-container">
+        <div class="llm-progress-container">
+            <div class="llm-progress-bar" id="llm-progress"></div>
         </div>
         
-        <div id="quiz"></div>
+        <div id="llm-quiz"></div>
         
-        <button class="submit-btn" id="submit">提交答案</button>
+        <button class="llm-submit-btn" id="llm-submit">Submit Answers</button>
         
-        <div class="results" id="results">
-            <div class="score" id="score"></div>
-            <div class="feedback" id="feedback"></div>
-            <button class="restart-btn" id="restart">重新测验</button>
+        <div class="llm-results" id="llm-results">
+            <div class="llm-score" id="llm-score"></div>
+            <div class="llm-feedback" id="llm-feedback"></div>
+            <button class="llm-restart-btn" id="llm-restart">Restart Quiz</button>
         </div>
     </div>
+</div>
 
-    <script>
+<style>
+    .llm-quiz-wrapper {
+        font-family: inherit;
+        line-height: 1.6;
+        margin: 2em 0;
+        color: #333;
+    }
+    .llm-quiz-container {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+        margin-bottom: 20px;
+    }
+    .llm-question {
+        margin-bottom: 25px;
+        padding: 15px;
+        border-radius: 8px;
+        background-color: #f7f9fc;
+    }
+    .llm-question-title {
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #2c3e50;
+    }
+    .llm-options {
+        margin-left: 10px;
+    }
+    .llm-option {
+        margin-bottom: 10px;
+        padding: 8px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+    .llm-option:hover {
+        background-color: #e9f0f8;
+    }
+    .llm-option input[type="radio"] {
+        margin-right: 10px;
+    }
+    .llm-option label {
+        cursor: pointer;
+        display: inline-block;
+        width: 90%;
+    }
+    .llm-submit-btn {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        display: block;
+        margin: 20px auto;
+        transition: background-color 0.3s;
+    }
+    .llm-submit-btn:hover {
+        background-color: #2980b9;
+    }
+    .llm-results {
+        display: none;
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #f1f9f7;
+        border-radius: 8px;
+        text-align: center;
+    }
+    .llm-score {
+        font-size: 24px;
+        font-weight: bold;
+        color: #27ae60;
+        margin-bottom: 10px;
+    }
+    .llm-feedback {
+        margin-top: 20px;
+    }
+    .llm-feedback-item {
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 4px;
+        text-align: left;
+    }
+    .llm-correct {
+        background-color: #d4edda;
+        color: #155724;
+    }
+    .llm-incorrect {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+    .llm-explanation {
+        font-style: italic;
+        margin-top: 8px;
+        color: #555;
+    }
+    .llm-restart-btn {
+        background-color: #2ecc71;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        display: block;
+        margin: 20px auto 0;
+        transition: background-color 0.3s;
+    }
+    .llm-restart-btn:hover {
+        background-color: #27ae60;
+    }
+    .llm-progress-container {
+        width: 100%;
+        background-color: #e0e0e0;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+    .llm-progress-bar {
+        height: 10px;
+        background-color: #3498db;
+        border-radius: 4px;
+        width: 0%;
+        transition: width 0.3s ease;
+    }
+</style>
+
+<script>
+    (function() {
         const quizData = [
             {
                 question: "What are the main steps in the pre-training stage of large language models?",
@@ -312,13 +301,13 @@ Through this overview, you should now have a solid understanding of the two key 
             }
         ];
 
-        const quizContainer = document.getElementById('quiz');
-        const resultsContainer = document.getElementById('results');
-        const submitButton = document.getElementById('submit');
-        const restartButton = document.getElementById('restart');
-        const scoreContainer = document.getElementById('score');
-        const feedbackContainer = document.getElementById('feedback');
-        const progressBar = document.getElementById('progress');
+        const quizContainer = document.getElementById('llm-quiz');
+        const resultsContainer = document.getElementById('llm-results');
+        const submitButton = document.getElementById('llm-submit');
+        const restartButton = document.getElementById('llm-restart');
+        const scoreContainer = document.getElementById('llm-score');
+        const feedbackContainer = document.getElementById('llm-feedback');
+        const progressBar = document.getElementById('llm-progress');
 
         function buildQuiz() {
             const output = [];
@@ -328,17 +317,17 @@ Through this overview, you should now have a solid understanding of the two key 
 
                 questionData.options.forEach((option, optionIndex) => {
                     options.push(
-                        `<div class="option">
-                            <input type="radio" id="question${questionIndex}-option${optionIndex}" name="question${questionIndex}" value="${optionIndex}">
-                            <label for="question${questionIndex}-option${optionIndex}">${option}</label>
+                        `<div class="llm-option">
+                            <input type="radio" id="llm-question${questionIndex}-option${optionIndex}" name="llm-question${questionIndex}" value="${optionIndex}">
+                            <label for="llm-question${questionIndex}-option${optionIndex}">${option}</label>
                         </div>`
                     );
                 });
 
                 output.push(
-                    `<div class="question">
-                        <div class="question-title">${questionIndex + 1}. ${questionData.question}</div>
-                        <div class="options">${options.join('')}</div>
+                    `<div class="llm-question">
+                        <div class="llm-question-title">${questionIndex + 1}. ${questionData.question}</div>
+                        <div class="llm-options">${options.join('')}</div>
                     </div>`
                 );
             });
@@ -347,34 +336,34 @@ Through this overview, you should now have a solid understanding of the two key 
         }
 
         function showResults() {
-            const answerContainers = quizContainer.querySelectorAll('.question');
+            const answerContainers = quizContainer.querySelectorAll('.llm-question');
             let numCorrect = 0;
             const feedback = [];
 
             quizData.forEach((questionData, questionIndex) => {
                 const answerContainer = answerContainers[questionIndex];
-                const selector = `input[name=question${questionIndex}]:checked`;
+                const selector = `input[name=llm-question${questionIndex}]:checked`;
                 const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
                 if (userAnswer === questionData.correct.toString()) {
                     numCorrect++;
                     feedback.push(
-                        `<div class="feedback-item correct">
-                            <strong>问题 ${questionIndex + 1}:</strong> 回答正确!
-                            <div class="explanation">${questionData.explanation}</div>
+                        `<div class="llm-feedback-item llm-correct">
+                            <strong>Question ${questionIndex + 1}:</strong> Correct!
+                            <div class="llm-explanation">${questionData.explanation}</div>
                         </div>`
                     );
                 } else {
                     feedback.push(
-                        `<div class="feedback-item incorrect">
-                            <strong>问题 ${questionIndex + 1}:</strong> 回答错误。正确答案是: ${questionData.options[questionData.correct]}
-                            <div class="explanation">${questionData.explanation}</div>
+                        `<div class="llm-feedback-item llm-incorrect">
+                            <strong>Question ${questionIndex + 1}:</strong> Incorrect. The correct answer is: ${questionData.options[questionData.correct]}
+                            <div class="llm-explanation">${questionData.explanation}</div>
                         </div>`
                     );
                 }
             });
 
-            scoreContainer.innerHTML = `你的得分: ${numCorrect} / ${quizData.length}`;
+            scoreContainer.innerHTML = `Your score: ${numCorrect} / ${quizData.length}`;
             feedbackContainer.innerHTML = feedback.join('');
             resultsContainer.style.display = 'block';
             submitButton.style.display = 'none';
@@ -387,27 +376,27 @@ Through this overview, you should now have a solid understanding of the two key 
             progressBar.style.width = '0%';
         }
 
-        // 更新进度条
         function updateProgress() {
-            const answered = document.querySelectorAll('input[type="radio"]:checked').length;
+            const answered = document.querySelectorAll('input[name^="llm-question"]:checked').length;
             const total = quizData.length;
             const progress = (answered / total) * 100;
             progressBar.style.width = progress + '%';
         }
 
-        // 初始化测验
-        buildQuiz();
-
-        // 事件监听器
-        submitButton.addEventListener('click', showResults);
-        restartButton.addEventListener('click', restartQuiz);
-        
-        // 添加进度条更新的事件监听器
-        document.addEventListener('change', function(e) {
-            if (e.target && e.target.type === 'radio') {
-                updateProgress();
-            }
-        });
-    </script>
-</body>
-</html>
+        // Initialize quiz
+        if (quizContainer) {
+            buildQuiz();
+            
+            // Event listeners
+            submitButton.addEventListener('click', showResults);
+            restartButton.addEventListener('click', restartQuiz);
+            
+            // Add progress bar update event listener
+            document.addEventListener('change', function(e) {
+                if (e.target && e.target.type === 'radio' && e.target.name.startsWith('llm-question')) {
+                    updateProgress();
+                }
+            });
+        }
+    })();
+</script>
