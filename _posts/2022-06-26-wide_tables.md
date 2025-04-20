@@ -50,7 +50,7 @@ function renderGame() {
   
   if (samples.length === 0) {
     container.innerHTML = `
-      <p>✅ You've labeled all the samples! Click below to start retraining the model:</p>
+      <p>✅ You've labeled all the samples! Click below to start training the model:</p>
       <button onclick="trainModel()">🚀 Start Training</button>
       <button onclick="resetGame()">🔄 Start Over</button>
     `;
@@ -87,12 +87,11 @@ function trainModel() {
     <p>Negative samples: ${model.negative}</p>
     <p><strong>Model Prediction:</strong> ${prediction}</p>
     <button onclick="testModel()">🔍 Test the Model</button>
-    <button onclick="trainModel()">🔄 Retrain Model</button>
   `;
 }
 
 function testModel() {
-  const testText = "The movie had great visuals but poor acting.";
+  const testText = "The movie had great visuals.";
   const score = model.positive / (model.positive + model.negative);
   const result = testText.includes("great") && score > 0.5 ? "Positive" : "Negative";
 
@@ -100,7 +99,6 @@ function testModel() {
     <p>🔎 Model Prediction on New Text:</p>
     <p><em>${testText}</em></p>
     <p>Model's prediction: <strong>${result}</strong></p>
-    <button onclick="trainModel()">🔄 Retrain the Model</button>
     <button onclick="resetGame()">🔄 Start Over</button>
   `;
 }
