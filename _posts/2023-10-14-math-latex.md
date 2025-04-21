@@ -13,13 +13,13 @@ In this website, we have explored the entire process of self-learning large lang
 
 Pre-training is the foundational stage of large language models. By learning from a vast amount of data, the model masters the basic structure and patterns of language. This stage includes several important steps:
 
-- **Data Download and Pre-Processing:** We start by collecting and processing a large corpus of text data to prepare for subsequent training.
+**1.1 Data Download and Pre-Processing:** We start by collecting and processing a large corpus of text data to prepare for subsequent training.
   
-- **Tokenization:** The text is then tokenized to convert it into an input format that the model can understand.
+**1.2 Tokenization:** The text is then tokenized to convert it into an input format that the model can understand.
   
-- **Neural Network Training:** Through training the neural network, the model learns language patterns and regularities present in the text data.
+**1.3 Neural Network Training:** Through training the neural network, the model learns language patterns and regularities present in the text data.
   
-- **Inference:** Once training is complete, the model can perform inference and generate output based on input text.
+**1.4 Inference:** Once training is complete, the model can perform inference and generate output based on input text.
 
 Additionally, this stage includes exploring and understanding foundational models such as GPT-2, which serve as a starting point for building more powerful models.
 
@@ -36,6 +36,11 @@ Reinforcement learning plays a vital role in LLM development, especially in dyna
 **2.3 Reinforcement Learning with Human Feedback (RLHF)**
 
 In this process, the model benefits not only from algorithmic feedback but also from human feedback. By integrating reinforcement learning with human insights, the model gradually learns to provide more reasonable and accurate responses in practical applications.
+
+
+Through the study, we realize that LLMs utilize not only traditional machine learning algorithms but also deep learning and reinforcement learning. To give you a clearer picture of where LLM fit within the broader field of Machine Learning, refer to the mind map below. It illustrates the relationship between traditional machine learning algorithms, deep learning, and large language models.
+
+![Machine Learning](https://github.com/user-attachments/assets/b09a5138-b03d-4bf2-842f-d33ecd3192ca)
 
 Through this overview, you should now have a solid understanding of the two key steps in LLM development: pre-training and post-training. To conclude your learning journey, let’s take a small test!
 
