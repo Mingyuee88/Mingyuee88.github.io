@@ -41,13 +41,14 @@ This website was created by CUI Mingyue as part of the coursework requirements. 
       <li>Co-Director of Center for Economic Sustainability and Entrepreneurial Finance</li>
       <li>Deputy Programme Director of Doctor of Management (HK) in PolyU</li>
     </ul>
+    <h3>Education</h3>
+    <ul>
+      <li>Ph.D. in Business Administration, University of Florida, 2016</li>
+      <li>M.Phil. in Risk Management Science, The Chinese University of Hong Kong, 2012</li>
+      <li>B.S. in Risk Management Science, The Chinese University of Hong Kong, 2010</li>
+    </ul>
   </div>
 </div>
-
-## Education
-- Ph.D. in Business Administration, University of Florida, 2016
-- M.Phil. in Risk Management Science, The Chinese University of Hong Kong, 2012
-- B.S. in Risk Management Science, The Chinese University of Hong Kong, 2010
 
 ## Research Interests
 Dr. Jin specializes in:
