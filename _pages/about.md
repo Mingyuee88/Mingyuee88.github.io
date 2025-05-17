@@ -15,8 +15,11 @@ This educational website is dedicated to exploring the fascinating world of Larg
 This site covers the complete journey of self-learning large language models:
 
 **1. Pre-Training Stage**: Understanding data collection, tokenization, neural network training, and inference
+
 **2. Supervised Fine-Tuning**: Adapting pre-trained models for specific tasks
+
 **3. Reinforcement Learning**: Enhancing model performance through algorithmic feedback
+
 **4. Reinforcement Learning with Human Feedback (RLHF)**: Integrating human insights for more practical applications
 
 ## Course Information
