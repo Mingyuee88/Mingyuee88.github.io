@@ -9,7 +9,7 @@ layout: post
 
 <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
   <div style="flex: 0 0 30%; padding-right: 20px;">
-     <img src="/assets/RIAIoTJinYongJimmy560860.png" alt="Dr. Yong Jin" style="width: 80%; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+     <img src="/assets/RIAIoTJinYongJimmy560860.png" alt="Dr. Yong Jin" style="height: 80%; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
     <p style="font-size: 0.9em; text-align: center; margin-top: 5px;"><em>Dr. Yong Jin</em></p>
   </div>
   <div style="flex: 0 0 70%;">
