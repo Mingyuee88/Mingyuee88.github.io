@@ -1,7 +1,7 @@
 ---
 title: Large Language Model Learning Quiz
 author: Tao He
-date: 2023-10-14
+date: 2023-12-12
 category: Jekyll
 layout: post
 mermaid: true
