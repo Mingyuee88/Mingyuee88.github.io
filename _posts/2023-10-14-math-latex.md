@@ -9,7 +9,7 @@ mermaid: true
 
 In this website, we have explored the entire process of self-learning large language models (LLMs), from pre-training to reinforcement learning. Here’s a summary of what we’ve learned:
 
-**1. Pre-Training Stage**
+# 1. Pre-Training Stage
 
 Pre-training is the foundational stage of large language models. By learning from a vast amount of data, the model masters the basic structure and patterns of language. This stage includes several important steps:
 
@@ -23,7 +23,7 @@ Pre-training is the foundational stage of large language models. By learning fro
 
 Additionally, this stage includes exploring and understanding foundational models such as GPT-2, which serve as a starting point for building more powerful models.
 
-**2. Post-Training**
+# 2. Post-Training
 
 **2.1 Supervised Fine-Tuning**
 
