@@ -31,7 +31,8 @@ This website was created by CUI Mingyue as part of the coursework requirements. 
 
 <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
   <div style="flex: 0 0 30%; padding-right: 20px;">
-    <img src="/assets/images/dr-jin.jpg" alt="Dr. Yong Jin" style="width: 100%; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <img src<img width="272" alt="image" src="https://github.com/user-attachments/assets/e89b52a6-96b9-47d2-9ad7-738bbe0a59ec" />
+" alt="Dr. Yong Jin" style="width: 100%; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
     <p style="font-size: 0.9em; text-align: center; margin-top: 5px;"><em>Dr. Yong Jin</em></p>
   </div>
   <div style="flex: 0 0 70%;">
