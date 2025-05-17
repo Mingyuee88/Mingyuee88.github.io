@@ -1,11 +1,12 @@
 ---
-title:Large Language Model Learning Quiz
-author: Tao He  
-date: 2023-10-14  
-category: Jekyll  
-layout: post  
-mermaid: true  
----  
+title: Large Language Model Learning Quiz
+author: Tao He
+date: 2023-10-14
+category: Jekyll
+layout: post
+mermaid: true
+---
+
 Through this overview, you should now have a solid understanding of the two key steps in LLM development: pre-training and post-training. To conclude your learning journey, let’s take a small test!
 
 <div class="llm-quiz-wrapper">
