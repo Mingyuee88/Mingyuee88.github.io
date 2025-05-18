@@ -7,21 +7,26 @@ layout: post
 ---
 ## Course Instructor
 
-<div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
-  <div style="flex: 0 0 30%; padding-right: 20px; text-align: center;">
-     <img src="/assets/RIAIoTJinYongJimmy560860.png" alt="Dr. Yong Jin" style="width: 80%; height: 60%; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+<div style="display: flex; align-items: stretch; margin-bottom: 20px;">
+  <!-- 左侧：图片 -->
+  <div style="flex: 0 0 30%; padding-right: 20px; text-align: center; display: flex; flex-direction: column; justify-content: flex-start;">
+    <img src="/assets/RIAIoTJinYongJimmy560860.png" alt="Dr. Yong Jin"
+         style="width: 80%; height: auto; max-height: 100%; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: auto;">
     <p style="font-size: 0.9em; margin-top: 5px;"><em>Dr. Yong Jin</em></p>
   </div>
-  <div style="flex: 0 0 70%;">
+
+  <!-- 右侧：介绍文字 -->
+  <div style="flex: 1; background-color: #f9f9f9; padding: 10px 15px; display: flex; flex-direction: column; justify-content: center;">
     <p style="margin: 0;"><strong>Dr. Yong Jin</strong><br>
     Associate Professor and Assistant Dean<br>
     Faculty of Business<br>
     The Hong Kong Polytechnic University</p>
-    <p style="margin: 0;"><strong>Email</strong>: jimmy.jin@polyu.edu.hk<br>
+    <p style="margin: 0; margin-top: 10px;"><strong>Email</strong>: jimmy.jin@polyu.edu.hk<br>
     <strong>Phone</strong>: +852 2766 5612<br>
     <strong>Office</strong>: Faculty of Business, The Hong Kong Polytechnic University</p>
   </div>
 </div>
+
 
 ## Research Centers
 **Centre for Business Technology & Innovations**
@@ -55,11 +60,11 @@ Dr. Jin welcomes research collaboration opportunities in the following areas:
 - Digital transformation strategies
 - Technology management
 
-## Follow Our Research
-
+## Follow Our Research  
 You can find more about Dr. Jin's research through these academic profiles:
-- ORCID ID
-- SCOPUS ID
+
+- [ORCID ID](https://orcid.org/0000-0002-1544-1082)  
+- [SCOPUS ID](https://www.scopus.com/authid/detail.uri?authorId=57193081004)
 
 ## Visit Us
 
